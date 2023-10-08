@@ -1,13 +1,28 @@
 ﻿using System;
 
-// Define a generic factory interface
+/// <summary>
+/// Factory interface for creating objects of type T
+/// </summary>
 public interface IFactory<T>
 {
+    /// <summary>
+    /// Creates an instance of T
+    /// </summary>  
+    /// <returns>The created instance</returns>
     T Create();
 }
+/// <summary>
+/// Represents a user in the system
+/// </summary>
 public interface IUser
 {
+    /// <summary>
+    /// The unique ID of the user
+    /// </summary>
     Guid Id { get; set; }
+    /// <summary>
+    /// The name of the user
+    /// </summary>
     string Name { get; set; }
     string Password { get; set; }
 }
@@ -18,6 +33,10 @@ public class User : IUser
     public string Name { get; set; }
     public string Password { get; set; }
 }
+
+// UserFactory implementation remains the same...
+
+// Usage:
 
 public class UserView
 {
